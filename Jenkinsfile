@@ -2,8 +2,9 @@ pipeline {
     agent any
 
     tools {
-        maven 'local_maven'
-    }
+    maven 'Maven 3.9.6'
+}
+
 
     environment {
         TOMCAT_HOME = 'C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0' // Use double backslashes
