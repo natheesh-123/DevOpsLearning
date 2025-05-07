@@ -21,7 +21,7 @@ pipeline {
 
         stage('Deploy WAR Manually') {
             steps {
-                bat 'copy target\\hello-world.war "%CATALINA_HOME%\\webapps\\"'
+                bat 'copy target\\myapacecheck-0.0.1-SNAPSHOT.war "%CATALINA_HOME%\\webapps\\"'
             }
         }
 
