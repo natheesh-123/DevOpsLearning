@@ -18,11 +18,6 @@ pipeline {
             }
         }
 
-        stage('Stop Tomcat') {
-            steps {
-                bat '"%CATALINA_HOME%\\bin\\shutdown.bat"'
-            }
-        }
 
         stage('Deploy WAR Manually') {
             steps {
