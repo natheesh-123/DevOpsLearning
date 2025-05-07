@@ -7,7 +7,7 @@ pipeline {
 
 
     environment {
-        TOMCAT_HOME = 'C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0' // Use double backslashes
+        CATALINA_HOME = 'C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0' // Use double backslashes
     }
 
     stages {
@@ -19,19 +19,19 @@ pipeline {
 
         stage('Stop Tomcat') {
             steps {
-                bat '"%TOMCAT_HOME%\\bin\\shutdown.bat"'
+                bat '"%CATALINA_HOME%\\bin\\shutdown.bat"'
             }
         }
 
         stage('Deploy WAR Manually') {
             steps {
-                bat 'copy target\\myapp.war "%TOMCAT_HOME%\\webapps\\"'
+                bat 'copy target\\hello-world.war "%CATALINA_HOME%\\webapps\\"'
             }
         }
 
         stage('Start Tomcat') {
             steps {
-                bat '"%TOMCAT_HOME%\\bin\\startup.bat"'
+                bat '"%CATALINA_HOME%\\bin\\startup.bat"'
             }
         }
     }
