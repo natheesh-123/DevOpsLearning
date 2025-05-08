@@ -28,6 +28,7 @@ pipeline {
         stage('Start Tomcat') {
             steps {
                 bat '"%CATALINA_HOME%\\bin\\startup.bat"'
+                sleep time: 10, unit: 'SECONDS'
             }
         }
     }
