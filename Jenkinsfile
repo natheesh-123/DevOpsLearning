@@ -8,7 +8,7 @@ pipeline {
 
 
     environment {
-        CATALINA_HOME = 'C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0' // Use double backslashes
+        CATALINA_HOME = 'D:\\temp_Tomcat\\apache-tomcat-10.1.40\\apache-tomcat-10.1.40' // Use double backslashes
     }
 
     stages {
