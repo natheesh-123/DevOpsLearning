@@ -1,16 +1,15 @@
 node {
-    // Define tools
     def mvnHome = tool name: 'Maven 3.9.6', type: 'maven'
     def jdkHome = tool name: 'jdk-17', type: 'jdk'
-    
-   
-    env.PATH = "${jdkHome}\\bin;${mvnHome}\\bin;${env.PATH}"
-    
-    
+
+    // Update PATH to include Maven and JDK
+    env.PATH = "\"${jdkHome}\\bin\";\"${mvnHome}\\bin\";${env.PATH}"
+
+    // Set Tomcat path
     env.CATALINA_HOME = 'D:\\temp_Tomcat\\apache-tomcat-10.1.40\\apache-tomcat-10.1.40'
 
     stage('Build WAR') {
-        bat "${mvnHome}\\bin\\mvn clean package"
+        bat "\"${mvnHome}\\bin\\mvn\" clean package"
     }
 
     stage('Deploy WAR Manually') {
